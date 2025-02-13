@@ -30,11 +30,23 @@
       }
       
        function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
+        const noButton = document.getElementById("noButton");
+        const container = document.querySelector('.container');
+        const buttonRect = noButton.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        
+        // Tính toán giới hạn di chuyển
+        const maxX = containerRect.width - buttonRect.width;
+        const maxY = containerRect.height - buttonRect.height;
+        
+        // Random vị trí mới trong giới hạn container
+        const x = Math.min(Math.max(0, Math.random() * maxX), maxX);
+        const y = Math.min(Math.max(0, Math.random() * maxY), maxY);
+        
+        noButton.style.position = 'absolute';
+        noButton.style.left = `${x}px`;
+        noButton.style.top = `${y}px`;
+      }
     </script>
   </body>
 </html>
