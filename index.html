@@ -10,7 +10,7 @@
         <h1 class="header_text">Do u love me?</h1>
       </div>
       <div class="gif_container">
-        <img src="./kitty.gif" alt="" />
+        <img src="./Capybara.gif" alt="Cute capybara" />
       </div>
       <div class="buttons">
         <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
@@ -22,27 +22,19 @@
         >
           No
         </button>
-        <script>
-          function nextPage() {
-            window.location.href = "index1.html";
-          }
-
-          function moveButton() {
-            var x =
-              Math.random() *
-                (window.innerWidth -
-                  document.getElementById("noButton").offsetWidth) -
-              85;
-            var y =
-              Math.random() *
-                (window.innerHeight -
-                  document.getElementById("noButton").offsetHeight) -
-              48;
-            document.getElementById("noButton").style.left = `${x}px`;
-            document.getElementById("noButton").style.top = `${y}px`;
-          }
-        </script>
       </div>
     </div>
+    <script>
+      function nextPage() {
+        window.location.href = "index1.html";
+      }
+      
+      function moveButton() {
+        var x = Math.random() * (window.innerWidth - document.getElementById("noButton").offsetWidth) - 85;
+        var y = Math.random() * (window.innerHeight - document.getElementById("noButton").offsetHeight) - 48;
+        document.getElementById("noButton").style.left = `${x}px`;
+        document.getElementById("noButton").style.top = `${y}px`;
+      }
+    </script>
   </body>
 </html>
